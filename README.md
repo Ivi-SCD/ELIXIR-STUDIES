@@ -1,6 +1,110 @@
+# Elixir Walk
 
+Aqui ficará toda a minha caminhada e imersão nessa linguagem chamada **Elixir**. 
+
+_“Elixir é uma linguagem dinâmica e 
+funcional projetada para construir aplicações 
+escaláveis e de fácil manutenção.”_ - **[Elixir-lang.org](https://elixir-lang.org/)**
+
+
+## Primeiros passos
+Para a instalação do elixir, você pode consultar
+o próprio site de instalação do elixir, pois lá está
+mais detalhado o passo a passo de acordo com seu
+sistema operacional, **[neste link](https://elixir-lang.org/install.html)**.
+
+Após a instalação você pode ir no seu próprio prompt
+de comandos, se estiver usando windows. Você pode verificar 
+a versão instalada no seu computador com o seguinte comando.
+```prompt
+Microsoft Windows [versão 10.0.19044.2251]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\nomeUsuario> iex -v
+IEx 1.14.2 (compiled with Erlang/OTP 25)
+```
+E para iniciar o console interativo do elixir é só utilizar o próprio `iex`.
+## Tipos Básicos
+São vários os tipos básicos do Elixir, irei tratar os estudados até agora
+na medida da evolução no aprendizado!!
+
+### Inteiros (Integer)
+Um fato interessante sobre o elixir é o 
+suporte para os números binários, octais e hexadecimais.
+
+Se você inserir um valor hexadecimal o elixir retorna
+o seguinte valor em número inteiro.
+
+```elixir
+iex(1)> 0b110 
+6
+
+iex(2)> 0o644
+420
+
+iex(3)> 0x1F
+31
+```
+
+Para verificar determinado tipo e outras informações de uma variável
+ou valor armazenado no sistema é só executar o comando `i(valor)` como abaixo:
+```elixir
+iex(4)> i(202)
+Term
+  202
+Data type
+  Integer
+Reference modules
+  Integer
+Implemented protocols
+  IEx.Info, Inspect, List.Chars, String.Chars
+iex(3)> i(0x1F)
+Term
+  31
+Data type
+  Integer
+Reference modules
+  Integer
+Implemented protocols
+  IEx.Info, Inspect, List.Chars, String.Chars
+```
+
+### Pontos flutuantes (Float)
+Em Elixir, os flutuantes exigem um decimal depois de no mínimo, um digito,
+eles possuem uma precisão de 64 bits e suportam a letra `e`
+para números exponenciais.
+
+```elixir
+iex(5)>3.14123123
+3.14123123
+
+iex(6)> 5.0e-15
+5.0e-15
+```
+
+### Átomos (Atoms)
+Um átomo é uma constante, no qual o nome é seu valor, segue os exemplos:
+```elixir
+iex(7)> :cavalo
+:cavalo
+
+iex(8)> :cavalo == :porco
+false
+```
+
+Os valores booleanos também são átomos `:true` e `:false`, respectivamente.
+
+### Strings
+O elixir utiliza como unicode o UTF-8, 
+suas strings são representadas por aspas duplas:
+```elixir
+iex(9)> "Hello World!"
+"Hello World!"
+```
+
+As strings suportam quebra de linha com o `\n`.
 ## Operações Básicas
-#### language: pt-BR
+
 #### Aritméticas
 
 O Elixir suporta os operadores básicos `+` `-` `*` e `/`, 
