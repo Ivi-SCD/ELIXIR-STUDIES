@@ -6,8 +6,19 @@ _“Elixir é uma linguagem dinâmica e
 funcional projetada para construir aplicações 
 escaláveis e de fácil manutenção.”_ - **[Elixir-lang.org](https://elixir-lang.org/)**
 
+#### **Primeiros Passos**
+* [Instalação](#primeirospassos)
+#### **Tipos básicos**
+ * [Integer](#integer)
+ * [Float](#float)
+ * [Atoms](#atom)
+ * [String](#string)
+#### **Operações Básicas**
+ * [Aritméticas](#aritmeticas)
+ * [Booleanas](#booleanas)
+ * [Interpolação e Concatenação de Strings](#interconcastring)
 
-## Primeiros passos
+## <a name="primeirospassos"> Primeiros passos </a>
 Para a instalação do elixir, você pode consultar
 o próprio site de instalação do elixir, pois lá está
 mais detalhado o passo a passo de acordo com seu
@@ -28,7 +39,7 @@ E para iniciar o console interativo do elixir é só utilizar o próprio `iex`.
 São vários os tipos básicos do Elixir, irei tratar os estudados até agora
 na medida da evolução no aprendizado!!
 
-### Inteiros (Integer)
+### <a name = "integer"> Inteiros (Integer) </a>
 Um fato interessante sobre o elixir é o 
 suporte para os números binários, octais e hexadecimais.
 
@@ -69,7 +80,7 @@ Implemented protocols
   IEx.Info, Inspect, List.Chars, String.Chars
 ```
 
-### Pontos flutuantes (Float)
+### <a name = "float"> Pontos flutuantes (Float) </a>
 Em Elixir, os flutuantes exigem um decimal depois de no mínimo, um digito,
 eles possuem uma precisão de 64 bits e suportam a letra `e`
 para números exponenciais.
@@ -82,7 +93,7 @@ iex(6)> 5.0e-15
 5.0e-15
 ```
 
-### Átomos (Atoms)
+### <a name = "atom"> Átomos (Atoms) </a>
 Um átomo é uma constante, no qual o nome é seu valor, segue os exemplos:
 ```elixir
 iex(7)> :cavalo
@@ -94,7 +105,7 @@ false
 
 Os valores booleanos também são átomos `:true` e `:false`, respectivamente.
 
-### Strings
+### <a name = "string"> Strings </a>
 O elixir utiliza como unicode o UTF-8, 
 suas strings são representadas por aspas duplas:
 ```elixir
@@ -105,7 +116,7 @@ iex(9)> "Hello World!"
 As strings suportam quebra de linha com o `\n`.
 ## Operações Básicas
 
-#### Aritméticas
+#### <a name = "aritmeticas"> Aritméticas </a>
 
 O Elixir suporta os operadores básicos `+` `-` `*` e `/`, 
 porém toda divisão com `/` retornará um número de tipo float. 
@@ -131,7 +142,7 @@ iex(15)> rem(2, 2)
 0
 ```
 
-#### Booleanas
+#### <a name = "booleanas"> Booleanas </a>
 Elixir provê os operadores booleanos `||` `&&` e `!`.
 
 ```elixir
@@ -160,7 +171,7 @@ Sendo a ordem de classificação:
 
 `number < atom < reference < function < port < pid < tuple < map < list < bitstring`
 
-#### Interpolação e Concatenação de Strings
+#### <a name = "interconcastring"> Interpolação e Concatenação de Strings </a>
 
 Para interpolar uma string em Elixir é muito simples, basta, com a variavel declarada
 usar na string o `#{variavel}`, como por exemplo:
