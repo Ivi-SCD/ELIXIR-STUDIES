@@ -2,9 +2,11 @@
 
 Aqui ficará toda a minha caminhada e imersão nessa linguagem chamada **Elixir**. 
 
-_“Elixir é uma linguagem dinâmica e 
+| _“Elixir é uma linguagem dinâmica e 
 funcional projetada para construir aplicações 
 escaláveis e de fácil manutenção.”_ - **[Elixir-lang.org](https://elixir-lang.org/)**
+
+---
 
 #### **Primeiros Passos**
 * [Instalação](#primeirospassos)
@@ -17,7 +19,10 @@ escaláveis e de fácil manutenção.”_ - **[Elixir-lang.org](https://elixir-l
  * [Aritméticas](#aritmeticas)
  * [Booleanas](#booleanas)
  * [Interpolação e Concatenação de Strings](#interconcastring)
+#### **Collections**
+ * [Listas](#listas)
 
+---
 ## <a name="primeirospassos"> Primeiros passos </a>
 Para a instalação do elixir, você pode consultar
 o próprio site de instalação do elixir, pois lá está
@@ -34,6 +39,8 @@ Microsoft Windows [versão 10.0.19044.2251]
 C:\Users\nomeUsuario> iex -v
 IEx 1.14.2 (compiled with Erlang/OTP 25)
 ```
+
+---
 E para iniciar o console interativo do elixir é só utilizar o próprio `iex`.
 ## Tipos Básicos
 São vários os tipos básicos do Elixir, irei tratar os estudados até agora
@@ -56,7 +63,6 @@ iex(2)> 0o644
 iex(3)> 0x1F
 31
 ```
-
 Para verificar determinado tipo e outras informações de uma variável
 ou valor armazenado no sistema é só executar o comando `i(valor)` como abaixo:
 ```elixir
@@ -188,4 +194,70 @@ iex(23)> nome = "Ivisson"
 
 iex(24)> "Hello " <> nome
 "Hello Ivisson"
+```
+
+---
+## Coleções (Collections)
+
+### <a name = "listas"> Lists </a>
+
+As listas são coleções que 
+podem possuir diferentes tipos diferentes.
+
+```elixir
+iex(25)> list = [1, :foo, "1", 1.0]
+[1, :foo, "1", 1.0]
+```
+
+Elixir utiliza suas listas como listas encadeadas, ou seja,
+para acessar o tamanho da lista é uma operação que levará
+mais tempo pois rodará em tempo linear `(O(n))`. Consequentemente
+será mais rápido inserir um elemento no ínicio `(head)` do que no
+seu final `(tail)` e para consultar o ínicio e o resto da lista
+é bastantes simples com esses comandos.
+
+```elixir
+iex(25)> hd list
+1
+
+iex(26)> tl list
+[:foo, "1", 1.0]
+```
+#### Concatenação de Lists
+Para a junção de duas listas basta utilizar `++`.
+
+```elixir
+iex(27)> list ++ [1, 2, 3, 4]
+[1, :foo, "1", 1.0, 1, 2, 3, 4]
+```
+#### Subtração de Lists
+Para a subtração de duas listas basta utilizar o `--`.
+
+```elixir
+iex(28)> list -- [1, :foo]
+["1", 1.0]
+```
+
+Obs: A subtração utiliza a **comparação estrita** entre seus valores.
+```elixir
+iex(29)> [30] -- [30.0]
+[30]
+
+iex(30)> [30.0] -- [30.0]
+[]
+```
+
+Alem dos tópicos citados, as listas podem utilizar 
+o pattern matching (assunto que será trabalhado mais a frente)
+e o operador cons(`|`) pra dividir a lista em head e tail.
+
+```elixir
+iex(31)> [head | tail] = [3.14, :pie, "Apple"]
+[3.14, :pie, "Apple"]
+
+iex(32)> head
+3.14
+
+iex(33)> tail
+[:pie, "Apple"]
 ```
